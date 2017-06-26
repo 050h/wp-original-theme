@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="../css/common.css">
+		<link rel="stylesheet" type="text/css" href="../css/header.css">
+		<link rel="stylesheet" type="text/css" href="../css/footer.css">
+		<link rel="stylesheet" type="text/css" href="../css/main.css">
+		<link rel="stylesheet" type="text/css" href="../css/top.css">
+		<link rel="stylesheet" type="text/css" href="../css/single.css">
+		<title>reizou05</title>
+	</head>
+	<body>
+		<header>
+			<div class="title-box">
+				<div class="search-box">
+					<input type="text">
+					<a href="#">検索</a>
+				</div>
+				<div class="logo">
+					<h1>水曜日の筋パネラ</h1>
+				</div>
+			</div>
+			<nav>
+				<ul>
+					<li><a href="#">ピックアップ</a></li>
+					<li><a href="#">ファッション</a></li>
+					<li><a href="#">ビューティー</a></li>
+					<li><a href="#">恋愛</a></li>
+					<li><a href="#">ライフスタイル</a></li>
+					<li><a href="#">特集</a></li>
+				</ul>
+			</nav>
+		</header>
+		<div class="content">
+			<div class="main-content">
+				<div class="article">
+					<div class="article-header">
+						<img src="../img/background.jpg">
+						<h1>焦りは禁物？「待って攻める」が結婚できる女のテクニックだった</h1>
+					</div>
+					<div class="article-content">
+						皆さんどうもお久しぶりです！@05_0hです<br>
+						今日は、地上波の録画サーバーを作っていきたいと思います！<br>
+						<h2>概要</h2>
+						使用OS : Linux(Ubuntu v15.10)<br>
+						チューナー : PX-U1UD v2.0<br>
+						録画ソフト : chinachu<br>
+						<h2>用意するもの</h2>
+						・てきとうなマシン<br>
+						・PX-U1UD<br>
+						・ちょっとした知識<br>
+						<h2>手順</h2>
+						<h3>1.Ubuntuをインストール</h3>
+						まずはパソコンにUbuntuをインストールします。<br>
+						Ubuntuのインストールの仕方はググってください。<br>
+						PX-U1UDを使用するためのドライバがv3.15以上のカーネルじゃないと対応していないので、<br>
+						バージョンは15.10が良いと思います。
+						<h3>2.Dockerをインストール</h3>
+						私の友人@wh11e7rueが環境を全部Dockerイメージにしてくれたのでそれを使うのでLinuxにDockerをインストールします。<br>
+						Dockerのインストールは至って簡単。<br>
+						<code>sudo apt-get install docker.io</code><br>
+						これだとバージョンが古いので、バージョンを上げます<br>
+						apt-transport-httpsが必要らしいので、インストールしておきます<br>
+						<code>sudo apt-get install apt-transport-https</code><br>
+						鍵の取得とレポジトリを追加します<br>
+						<code>sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 36A1D7869245C8950F966E92D8576A8BA88D21E9</code><br>
+						<code>sudo sh -c "echo deb https://get.docker.com/ubuntu docker main > /etc/apt/sources.list.d/docker.list"</code><br>
+						<code>sudo apt-get update</code><br>
+						<code>sudo apt-get install lxc-docker</code><br>
+						<code>docker --version</code><br>
+						で1.9.1とかになってればおｋ
+						<h3>アンテナをつなげる</h3>
+						PX-U1UDにアンテナ線をさして、パソコンに繋げておいてください。<br>
+						<h3>コンテナを動かす</h3>
+						<a href="https://github.com/wh11e7rue/chinachu-pxs1ud.git">ソース</a>
+						このコマンドを打つだけ<br>
+						<code>docker run -d -p 10772:10772 --volume /path/to/recorded:/home/chinachu/recorded --device /dev/dvb/adapter0:/dev/dvb/adapter0 wh11e7rue/chinachu-pxs1ud</code><br>
+						これで、エラーがでなければブラウザからlocalhost:10772にアクセスできるはず<br>
+						※初回は、番組表を取得するのに少し時間がかかります<br>
+						<h3>ポートを開放する</h3>
+						ポートを開放するには、各家庭によって、使っているルーターが違うのでここでは細かくは説明しませんが、おおまかなことだけ説明します。<br>
+						1.ルーターの設定画面に行く(192.168.1.1)とかにアクセス<br>
+						2.ルーターの設定画面で開放<br>
+						おわり<br>
+						<h3>外からアクセスしてみる</h3>
+						ターミナルで<br>
+						<code>curl ipinfo.io</code><br>
+						を打つとグローバルアドレスが確認できる。<br>
+						それをブラウザに手打ち。<br>
+						ドメインを持っているのであれば、ドメインを指定してもよい。<br>
+						<h2>感想</h2>
+						やはり@wh11e7rueは天才、自宅サーバーを作る際は火事に気をつけること。<br>
+						エラーが出ても頑張ってください。<br>
+						ではでは〜
+					</div>
+				</div>
+				<div class="postlinks">
+					<div class="prev">
+						<a href="#">ああああああ</a>
+					</div>
+					<div class="next">
+						<a href="#">いいいいいい</a>
+					</div>
+				</div>
+			</div>
+			<div class="right-content">
+				<ul>
+					<li>
+						<p>デイリーランキング</p>
+					</li>
+					<li>
+						<img class="thumbnail-min" src="img/background.jpg">
+					</li>
+					<li>
+						<img class="thumbnail-min" src="img/background.jpg">
+					</li>
+					<li>
+						<img class="thumbnail-min" src="img/background.jpg">
+					</li>
+				</ul>
+			</div>
+		</div>
+		<footer>
+			<ul>
+				<li><a href="/">トップ</a></li>
+				<li><a href="#">利用規約</a></li>
+				<li><a href="#">プライバシーポリシー</a></li>
+			</ul>
+			<p class="min title">Copyright © reizou05 All Rights Reserved.</p>
+		</footer>
+	</body>
+</html>

@@ -1,0 +1,45 @@
+header{
+	position: sticky;
+	position: -webkit-sticky;
+	width: 100%;
+	top: 0;
+	z-index: 5;
+	border-bottom: 1px solid #e5e5e5;
+}
+header > .title-box{
+	position: relative;
+	background: #fff;
+	width: 100%;
+	height: 5rem;
+	border-bottom: 1px solid #e5e5e5;
+}
+.title-box > .search-box{
+	position: absolute;
+	top: 1.25rem;
+	margin: 0 1rem;
+}
+.title-box > .logo{
+	width: auto;
+}
+.title-box > .logo > a > h1{
+	line-height: 5rem;
+}
+header > nav{
+	position: relative;
+	background: rgba(256,256,256,0.9);
+	width: 1060px;
+	height: 3rem;
+	margin: 0 auto;
+}
+header > nav > ul > li{
+	float: left;
+	width: 16.666%;
+	padding: 1rem 0;
+	line-height: 1rem;
+}
+header > nav > ul > li > a{
+	display:block;
+	width: 100%;
+}
+
+

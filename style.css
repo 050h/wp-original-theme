@@ -1,0 +1,328 @@
+/*
+	Theme Name: じろう
+	Theme URI: http://reizou05.com/theme
+	Author: reizou05
+	Author URI: http://reizou05.com
+	Description: オリジナルテーマ
+	Version: 0.0.1
+*/.content{
+	position: relative;
+	width: 1060px;
+	height: auto;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: 1rem auto;
+	overflow: auto;
+}
+
+.thumbnail{
+	position: relative;
+	width: 100%;
+	height: 300px;
+}
+.thumbnail-min{
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+
+
+footer{
+	position: relative;
+	bottom: 0;
+	width: 100%;
+	height: 6em;
+	background: #fff;
+	border-top: 1px solid #e5e5e5;
+}
+footer ul{
+	position: relative;
+	width: 100%;
+	top: 1em;
+	height: 3em;
+}
+footer ul li{
+	margin: 0 1em;
+	display: inline-block;
+}
+footer ul li a{
+	color: #333;
+}
+
+
+header{
+	position: sticky;
+	position: -webkit-sticky;
+	width: 100%;
+	top: 0;
+	z-index: 5;
+	border-bottom: 1px solid #e5e5e5;
+}
+header > .title-box{
+	position: relative;
+	background: #fff;
+	width: 100%;
+	height: 5rem;
+	border-bottom: 1px solid #e5e5e5;
+}
+.title-box > .search-box{
+	position: absolute;
+	top: 1.25rem;
+	margin: 0 1rem;
+}
+.title-box > .logo{
+	width: auto;
+}
+.title-box > .logo > a > h1{
+	line-height: 5rem;
+}
+header > nav{
+	position: relative;
+	background: rgba(256,256,256,0.9);
+	width: 1060px;
+	height: 3rem;
+	margin: 0 auto;
+}
+header > nav > ul > li{
+	float: left;
+	width: 16.666%;
+	padding: 1rem 0;
+	line-height: 1rem;
+}
+header > nav > ul > li > a{
+	display:block;
+	width: 100%;
+}
+
+
+*,
+*:after,
+*:before{
+	-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+			box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	-webkit-overflow-scrolling: touch;
+	-webkit-font-smoothing: antialiased;
+}
+html,body{
+	position: relative;
+	font-family: sans-serif;
+	width: 100%;
+	height: 100%;
+	font-size: 16px;
+	text-align: center;
+}
+ul{
+	list-style: none;
+}
+a {
+	text-decoration: none;
+	color: #666;
+	font-size: 1rem;
+	line-height: 100%;
+	transition: all .4s ease;
+}
+a:hover {
+	text-decoration: none;
+	color: #222;
+	transition: all .4s ease;
+}
+h1{
+	font-size: 2rem;
+	color: #222;
+	letter-spacing: 6px;
+	line-height: 100%;
+	font-weight: lighter;
+}
+input, button, textarea,select {
+	margin: 0;
+	padding: 0;
+	border: none;
+	outline: none;
+	-webkit-appearance: none;
+	border-radius: 0;
+}
+input[type=text] {
+	border-bottom: 1px solid #383838;
+	font-size: 1rem;
+	font-family: inherit;
+	padding: .5rem 1rem;
+}
+
+code{
+	display: block;
+	padding: 9px 14px;
+	border-radius: 4px;
+	background-color: #f7f7f9;
+	border: 1px solid #e1e1e8;
+}
+
+
+.article{
+	position: relative;
+	width: 100%;
+	padding: 1.5rem;
+	overflow: auto;
+}
+.article-header{
+	position: relative;
+	width: 100%;
+	overflow: auto;
+}
+.article-header > img{
+	position: relative;
+	width: 160px;
+	height: 160px;
+	border-radius: 50%;
+	float: left;
+	margin-right: 2rem;
+}
+.article-header > a > h1{
+	font-size: 1.6rem;
+	line-height: 150%;
+	text-align: left;
+	letter-spacing: 3px;
+}
+.article-content{
+	position: relative;
+	width: 100%;
+	padding: 2rem;
+	text-align: left;
+}
+.article-content > h2{
+	display: block;
+	font-size: 1.5rem;
+	padding: 0 6px;
+	margin: 12px 0;
+	border-bottom: 1px solid #e5e5e5; 
+}
+.article-content > h3{
+	display: block;
+	font-size: 1.2rem;
+	padding: 0 6px;
+	margin: 12px 0;
+	border-left: 3px solid #e5e5e5;
+}
+
+
+.postlinks{
+	position: relative;
+	width: 100%;
+	height: 3rem;
+	border-top: 1px solid #e5e5e5;
+	border-bottom: 1px solid #e5e5e5;
+}
+.postlinks > .prev{
+	position: relative;
+	width: 50%;
+	float: left;
+	border-right: 1px solid #efefef;
+}
+.postlinks > .next{
+	position: relative;
+	width: 50%;
+	float: right;
+	border-right: 1px solid #efefef;
+}
+.postlinks > .prev > a,
+.postlinks > .next > a{
+	font-size: 1.2rem;
+	line-height: 3rem;
+	display: block;
+}
+
+
+
+.main-content-top{
+	position: relative;
+	width: 100%;
+	overflow: auto;
+}
+.main-content-top > ul{
+	width: 100%;
+}
+.main-content-top > ul > li{
+	float: left;
+	width: 49%;
+}
+.main-content-top > ul > li:nth-of-type(1){
+	margin-right: 1%;
+}
+.main-content-top > ul > li:nth-of-type(2){
+	margin-left: 1%;
+}
+.main-content-top > ul > li > a{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+
+.main-content{
+	position: relative;
+	width: 80%;
+	margin-bottom: 3rem;
+	float: left;
+}
+.main-content > ul{
+	width: 100%;
+}
+.main-content > ul > li{
+	float: left;
+	width: 31.3333%;
+	margin: 1%;
+}
+.main-content > ul > li > a{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+.main-content > ul > li:nth-of-type(3n+1){
+	margin-left: 0;
+}
+.right-content{
+	position: relative;
+	width: 20%;
+	float: right;
+}
+.right-content > ul{
+	width: 100%;
+}
+.right-content > ul > li{
+	height: 160px;
+	margin: 1%;
+}
+.right-content > ul > li:nth-of-type(1){
+	height: 80px;
+	border: 1px solid #e5e5e5;
+}
+.right-content > ul > li:nth-of-type(1) > p{
+	line-height: 80px;
+}
+
+figcaption{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	z-index: 2;
+	width: 100%;
+	height: auto;
+	padding: 1rem 2rem;
+	background: rgba(256,256,256,.8);
+}
+figcaption > p{
+	font-size: .8rem;
+	line-height: 150%;
+	color: #222;
+	text-align: left;
+}
+figcaption > p.big{
+	font-size: 1.2rem;
+}
+
+
