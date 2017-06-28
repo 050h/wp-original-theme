@@ -219,13 +219,12 @@ code{
 .postlinks > .prev{
 	position: relative;
 	width: 50%;
-	float: left;
-	border-right: 1px solid #efefef;
+	float: right;
 }
 .postlinks > .next{
 	position: relative;
 	width: 50%;
-	float: right;
+	float: left;
 	border-right: 1px solid #efefef;
 }
 .postlinks > .prev > a,

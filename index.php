@@ -27,13 +27,17 @@
 					<?php
 					if (have_posts()) :
 						while (have_posts()) : the_post(); ?>
-							<?php 
-								$image_id = get_post_thumbnail_id();
-								$image_url = wp_get_attachment_image_src($image_id, true);
-							?>
 							<li>
 								<a href="<?php the_permalink();?>">
-									<img class="thumbnail-min" src="<?php echo $image_url[0]; ?>">
+									<?php if (has_post_thumbnail()) : ?>
+										<?php
+											$image_id = get_post_thumbnail_id ();
+											$image_url = wp_get_attachment_image_src ($image_id, true);
+										?>
+										<img class="thumbnail-min" src="<?php echo $image_url[0]; ?>">
+									<?php else : ?>
+										<img src="<?php bloginfo('template_url'); ?>/img/noimage.gif" width="100" height="100" alt="デフォルト画像" /></a>
+									<?php endif ; ?>
 									<figcaption>
 										<p><?php echo the_title(); ?></p>
 									</figcaption>

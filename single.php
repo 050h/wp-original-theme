@@ -1,9 +1,13 @@
+<?php
+	ini_set( 'display_errors', 1 );
+?>
+
 <!DOCTYPE html>
 <html lang="ja">
 	<head>
 		<meta charset="UTF-8">
 		<link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>">
-		<title><?php bloginfo('name'); ?></title>
+		<title><?php wp_title( '|', true, 'right' ); bloginfo('name'); ?></title>
 	</head>
 	<body>
 		<?php get_header(); ?>
@@ -33,10 +37,10 @@
 				</div>
 				<div class="postlinks">
 					<?php if( get_previous_post() ): ?>
-						<div class="prev"><?php previous_post_link('%link', '« %title'); ?></div>
+						<div class="prev"><?php previous_post_link('%link', '%title »'); ?></div>
 					<?php endif;
 					if( get_next_post() ): ?>
-						<div class="next"><?php next_post_link('%link', '%title »'); ?></div>
+						<div class="next"><?php next_post_link('%link', '« %title'); ?></div>
 					<?php endif; ?>
 				</div>
 			</div>

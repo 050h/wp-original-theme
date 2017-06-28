@@ -8,17 +8,16 @@ function set_post_views() {
 	$count_array = get_post_meta( $postID, $count_key, true );
 	$sum_count = get_post_meta( $postID, $key, true );
 
-	if( !is_array($count_array) ) { //配列ではない
+	if( !is_array($count_array)){ //配列ではない
 		$count_array = array();
 		$count_array[$num] = 1;
 	} else { //配列である
-		if ( isset( $count_array[$num] ) ) { //カウント配列[n]が存在する
+		if ( isset( $count_array[$num] )){ //カウント配列[n]が存在する
 			$count_array[$num] += 1;
 		} else { //カウント配列[n]が存在しない
 			$count_array[$num] = 1;
 		}
 	}
-	//アクセス数を更新する
 	update_post_meta( $postID, $count_key, $count_array );
 	update_post_meta( $postID, $key, $sum_count + 1 );
 }
@@ -41,12 +40,11 @@ function reset_post_views() {
 		foreach($reset_posts as $reset_post):
 			$postID = $reset_post->ID;
 			$count_array = get_post_meta( $postID , $reset_key, true );
-		if ( isset( $count_array[$num] ) ) { //カウント配列[n]が存在する
-			$count_array[$num] = 0;
-		}
-		//アクセス数をリセットする
-		update_post_meta( $postID, $reset_key, $count_array );
-		update_post_meta( $postID, $key, array_sum( $count_array ) );
+			if ( isset( $count_array[$num] ) ) { //カウント配列[n]が存在する
+				$count_array[$num] = 0;
+			}
+			update_post_meta( $postID, $reset_key, $count_array );
+			update_post_meta( $postID, $key, array_sum( $count_array ) );
 		endforeach;
 	endif;
 }
@@ -63,6 +61,7 @@ function my_interval( $schedules ) {
 	);
 	return $schedules;
 }
+
 add_filter( 'cron_schedules', 'my_interval' );
 
 //アクションフックを定期的に実行するスケジュールイベントの追加
@@ -71,6 +70,7 @@ function my_activation() {
 		wp_schedule_event( 1451574000, '1hours', 'set_hours_event' );
 	}
 }
+
 add_action('wp', 'my_activation');
 
 //ボットの判別
@@ -119,3 +119,8 @@ function isBot() {
 	}
 	return $is_bot;
 }
+
+// アイキャッチ画像を有効にする。
+add_theme_support('post-thumbnails'); 
+
+?>

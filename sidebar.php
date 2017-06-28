@@ -1,5 +1,5 @@
-<?php if( is_single() && !is_user_logged_in() && !isBot() ): //個別記事 かつ ログインしていない かつ 非ボット
-    set_post_views(); //アクセスをカウントする
+<?php if( is_single() && !is_user_logged_in() && !isBot() ):
+    set_post_views();
 endif; ?>
 <div class="right-content">
 	<ul>
