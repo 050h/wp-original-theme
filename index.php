@@ -1,3 +1,8 @@
+<?php $posts = get_posts(array(
+	'posts_per_page' => 2,
+	'meta_key' => 'views',
+	'orderby' => 'meta_value_num',
+)); ?>
 <!DOCTYPE html>
 <html lang="ja">
 	<head>
@@ -10,16 +15,17 @@
 		<div class="content">
 			<div class="main-content-top">
 				<ul>
-					<li>
-						<a href="#">
-							<img class="thumbnail" src="img/background.jpg">
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							<img class="thumbnail" src="img/background.jpg">
-						</a>
-					</li>
+					<?php foreach($posts as $post) : ?>
+						<?php
+							$image_id = get_post_thumbnail_id ();
+							$image_url = wp_get_attachment_image_src ($image_id, true);
+						?>
+						<li>
+							<a href="<?php the_permalink(); ?>" >
+								<img class="thumbnail-min" src="<?php echo $image_url[0]; ?>">
+							</a>
+						</li>
+					<?php endforeach; ?>
 				</ul>
 			</div>
 			<div class="main-content">

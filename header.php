@@ -7,7 +7,6 @@
 	<nav>
 		<ul>
 			<?php
-
 				$categories = get_the_category();
 				foreach ($categories as $category) {
 					$catId = $category->cat_ID;
