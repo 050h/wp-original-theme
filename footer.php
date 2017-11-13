@@ -1,8 +1,17 @@
 <footer>
-	<ul>
-		<li><a href="/">トップ</a></li>
-		<li><a href="#">利用規約</a></li>
-		<li><a href="#">プライバシーポリシー</a></li>
-	</ul>
-	<p class="min title">Copyright © <?php bloginfo('name'); ?> All Rights Reserved.</p>
+	<p>© 2017 reizou05 All Rights Reserved.</p>
+	<div class="sns-list">
+		<a href="https://www.facebook.com/reiji.tenaka" target="_blank">
+			<i class="fa fa-facebook fa-fw"></i>
+		</a>
+		<a href="https://www.instagram.com/reizou05/" target="_blank">
+			<i class="fa fa-instagram fa-fw"></i>
+		</a>
+		<a href="https://twitter.com/reizou05" target="_blank">
+			<i class="fa fa-twitter fa-fw"></i>
+		</a>
+		<a href="https://github.com/reizou05" target="_blank">
+			<i class="fa fa-github fa-fw" aria-hidden="true"></i>
+		</a>
+	</div>
 </footer>

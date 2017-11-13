@@ -1,133 +1,207 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 	<head>
 		<meta charset="UTF-8">
+
+		<link rel="stylesheet" type="text/css" href="../css/base.css">
 		<link rel="stylesheet" type="text/css" href="../css/common.css">
+		<link rel="stylesheet" type="text/css" href="../css/single.css">
 		<link rel="stylesheet" type="text/css" href="../css/header.css">
 		<link rel="stylesheet" type="text/css" href="../css/footer.css">
-		<link rel="stylesheet" type="text/css" href="../css/main.css">
-		<link rel="stylesheet" type="text/css" href="../css/top.css">
-		<link rel="stylesheet" type="text/css" href="../css/single.css">
-		<title>reizou05</title>
+		<link rel="stylesheet" type="text/css" href="../css/font-awesome.css">
+
+		<script type="text/javascript" src="../js/main.js"></script>
+
+		<title>Blog</title>
 	</head>
 	<body>
-		<header>
-			<div class="title-box">
-				<div class="search-box">
-					<input type="text">
-					<a href="#">検索</a>
-				</div>
-				<div class="logo">
-					<h1>水曜日の筋パネラ</h1>
-				</div>
+		<header id="nav-bar">
+			<div class="header-title">
+				<h1>水曜日の筋パネラ</h1>
 			</div>
-			<nav>
-				<ul>
-					<li><a href="#">ピックアップ</a></li>
-					<li><a href="#">ファッション</a></li>
-					<li><a href="#">ビューティー</a></li>
-					<li><a href="#">恋愛</a></li>
-					<li><a href="#">ライフスタイル</a></li>
-					<li><a href="#">特集</a></li>
-				</ul>
-			</nav>
+			<div class="sns-list">
+				<a href="https://www.facebook.com/reiji.tenaka" target="_blank">
+					<i class="fa fa-facebook fa-fw"></i>
+				</a>
+				<a href="https://www.instagram.com/reizou05/" target="_blank">
+					<i class="fa fa-instagram fa-fw"></i>
+				</a>
+				<a href="https://twitter.com/reizou05" target="_blank">
+					<i class="fa fa-twitter fa-fw"></i>
+				</a>
+				<a href="https://github.com/reizou05" target="_blank">
+					<i class="fa fa-github fa-fw" aria-hidden="true"></i>
+				</a>
+			</div>
+			<div class="header-nav">
+				<p>MENU</p>
+				<nav>
+					<ul>
+						<li>
+							<a href="#">HOME</a>
+						</li>
+						<li>
+							<a href="#">ABOUT</a>
+						</li>
+						<li>
+							<a href="#">PRODUCTS</a>
+						</li>
+						<li>
+							<a href="#">BLOG</a>
+						</li>
+						<li>
+							<a href="#">CONTACTS</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
 		</header>
-		<div class="content">
-			<div class="main-content">
-				<div class="article">
-					<div class="article-header">
-						<img src="../img/background.jpg">
-						<h1>焦りは禁物？「待って攻める」が結婚できる女のテクニックだった</h1>
-					</div>
-					<div class="article-content">
-						皆さんどうもお久しぶりです！@05_0hです<br>
-						今日は、地上波の録画サーバーを作っていきたいと思います！<br>
-						<h2>概要</h2>
-						使用OS : Linux(Ubuntu v15.10)<br>
-						チューナー : PX-U1UD v2.0<br>
-						録画ソフト : chinachu<br>
-						<h2>用意するもの</h2>
-						・てきとうなマシン<br>
-						・PX-U1UD<br>
-						・ちょっとした知識<br>
-						<h2>手順</h2>
-						<h3>1.Ubuntuをインストール</h3>
-						まずはパソコンにUbuntuをインストールします。<br>
-						Ubuntuのインストールの仕方はググってください。<br>
-						PX-U1UDを使用するためのドライバがv3.15以上のカーネルじゃないと対応していないので、<br>
-						バージョンは15.10が良いと思います。
-						<h3>2.Dockerをインストール</h3>
-						私の友人@wh11e7rueが環境を全部Dockerイメージにしてくれたのでそれを使うのでLinuxにDockerをインストールします。<br>
-						Dockerのインストールは至って簡単。<br>
-						<code>sudo apt-get install docker.io</code><br>
-						これだとバージョンが古いので、バージョンを上げます<br>
-						apt-transport-httpsが必要らしいので、インストールしておきます<br>
-						<code>sudo apt-get install apt-transport-https</code><br>
-						鍵の取得とレポジトリを追加します<br>
-						<code>sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 36A1D7869245C8950F966E92D8576A8BA88D21E9</code><br>
-						<code>sudo sh -c "echo deb https://get.docker.com/ubuntu docker main > /etc/apt/sources.list.d/docker.list"</code><br>
-						<code>sudo apt-get update</code><br>
-						<code>sudo apt-get install lxc-docker</code><br>
-						<code>docker --version</code><br>
-						で1.9.1とかになってればおｋ
-						<h3>アンテナをつなげる</h3>
-						PX-U1UDにアンテナ線をさして、パソコンに繋げておいてください。<br>
-						<h3>コンテナを動かす</h3>
-						<a href="https://github.com/wh11e7rue/chinachu-pxs1ud.git">ソース</a>
-						このコマンドを打つだけ<br>
-						<code>docker run -d -p 10772:10772 --volume /path/to/recorded:/home/chinachu/recorded --device /dev/dvb/adapter0:/dev/dvb/adapter0 wh11e7rue/chinachu-pxs1ud</code><br>
-						これで、エラーがでなければブラウザからlocalhost:10772にアクセスできるはず<br>
-						※初回は、番組表を取得するのに少し時間がかかります<br>
-						<h3>ポートを開放する</h3>
-						ポートを開放するには、各家庭によって、使っているルーターが違うのでここでは細かくは説明しませんが、おおまかなことだけ説明します。<br>
-						1.ルーターの設定画面に行く(192.168.1.1)とかにアクセス<br>
-						2.ルーターの設定画面で開放<br>
-						おわり<br>
-						<h3>外からアクセスしてみる</h3>
-						ターミナルで<br>
-						<code>curl ipinfo.io</code><br>
-						を打つとグローバルアドレスが確認できる。<br>
-						それをブラウザに手打ち。<br>
-						ドメインを持っているのであれば、ドメインを指定してもよい。<br>
-						<h2>感想</h2>
-						やはり@wh11e7rueは天才、自宅サーバーを作る際は火事に気をつけること。<br>
-						エラーが出ても頑張ってください。<br>
-						ではでは〜
+		<section id="article">
+			<div class="content">
+				<div class="side-contents">
+					<div class="side-content">
+						<p>Date</p>
+						<p class="date">2017.10.10</p>
+						<p>Category</p>
+						<p class="cats">
+							<a href="#">プログラミング</a>,<a href="#">CSS</a>
+						</p>
+						<p>Tags</p>
+						<p class="tags">
+							<a href="#">プログラミング</a>,<a href="#">CSS</a>
+						</p>
 					</div>
 				</div>
-				<div class="postlinks">
-					<div class="prev">
-						<a href="#">ああああああ</a>
-					</div>
-					<div class="next">
-						<a href="#">いいいいいい</a>
+				<div class="article-content">
+					<h1>タイトル</h1>
+					<img src="../img/thumbnail.png">
+					<p>文字を書き順通りに徐々にアニメーションさせて描画する「ハンドライティングアニメーション」をSVGで実装する方法。</p>
+					<p>以前に<a href="#">AfterEffects</a>で同じようなことをやっていて、それのSVGバージョン。AfterEffects の場合は、当然ながら動画として出力しvideo要素で動画を埋め込んで表示させるわけだけど、SVGの場合は、（主に）インラインSVGを設置してJavaScriptでアニメーションさせて実現する。</p>
+					<p>少し前までは、一部のブラウザでうまく表示できなかった（気がした）が、今は全く問題なく表示させることができるようになっていた。古いIE（10以前）ではさすがに無理だけど、もう考慮する必要はないと思われるので、十分に使える表現だと思う。</p>
+					<h2>少タイトル</h2>
+					<p>正直、正式な名称はよく分からないんだけど、以下のようなアニメーションを「ハンドライティングアニメーション」と勝手に呼んでいる。</p>
+					<p class="pre-title">index.html</p>
+					<pre><code>&lt;svg class=&quot;p-svg__mask&quot; viewBox=&quot;0 0 892 135&quot; id=&quot;js-mask&quot;&gt;
+  &lt;defs&gt;
+    &lt;!-- アニメーション画像 --&gt;
+    &lt;mask id=&quot;clipMask&quot;&gt;
+      &lt;path class=&quot;p-svg__path sw15&quot; d=&quot;...&lt;!-- 省略 --&gt;...&quot;/&gt;
+      &lt;!-- 省略 --&gt;
+      &lt;path class=&quot;p-svg__path sw20&quot; d=&quot;...&lt;!-- 省略 --&gt;...&quot;/&gt;
+    &lt;/mask&gt;
+  &lt;/defs&gt;
+  &lt;!-- ベース画像 --&gt;
+  &lt;image xlink:href=&quot;./images/base.svg&quot; width=&quot;100%&quot; height=&quot;100%&quot; mask=&quot;url(#clipMask)&quot;&gt;&lt;/image&gt;
+&lt;/svg&gt;</code></pre>
+					<div class="share-btns">
+						<a href="#" class="twitter">
+							<img src="../img/sns-icon/twitter.png">
+						</a>
+						<a href="#" class="facebook">
+							<img src="../img/sns-icon/facebook.png">
+						</a>
+						<a href="#" class="line">
+							<img src="../img/sns-icon/line.png">
+						</a>
+						<a href="#" class="hatebu">
+							<img src="../img/sns-icon/hatebu.png">
+						</a>
 					</div>
 				</div>
 			</div>
-			<div class="right-content">
-				<ul>
-					<li>
-						<p>デイリーランキング</p>
-					</li>
-					<li>
-						<img class="thumbnail-min" src="img/background.jpg">
-					</li>
-					<li>
-						<img class="thumbnail-min" src="img/background.jpg">
-					</li>
-					<li>
-						<img class="thumbnail-min" src="img/background.jpg">
-					</li>
-				</ul>
+		</section>
+		<section id="relateds">
+			<div class="content">
+				<h2 class="section-title">RELATED POSTS</h2>
+				<div class="pins">
+					<div class="pin">
+						<div class="circle-thumb">
+							<a href="#">
+								<img src="../img/reizou05.jpg">
+							</a>
+						</div>
+						<div class="title-box">
+							<p class="date">2017.10.10</p>
+							<a href="#">タイトルタイトルタイトルタイトル</a>
+							<div class="tags">
+								<a href="#" class="tag">プログラミング</a>
+								<a href="#" class="tag">CSS</a>
+							</div>
+						</div>
+					</div>
+					<div class="pin">
+						<div class="circle-thumb">
+							<a href="#">
+								<img src="../img/reizou05.jpg">
+							</a>
+						</div>
+						<div class="title-box">
+							<p class="date">2017.10.10</p>
+							<a href="#">タイトルタイトルタイトルタイトル</a>
+							<div class="tags">
+								<a href="#" class="tag">プログラミング</a>
+							</div>
+						</div>
+					</div>
+					<div class="pin">
+						<div class="circle-thumb">
+							<a href="#">
+								<img src="../img/reizou05.jpg">
+							</a>
+						</div>
+						<div class="title-box">
+							<p class="date">2017.10.10</p>
+							<a href="#">タイトルタイトルタイトルタイトル</a>
+							<div class="tags">
+								<a href="#" class="tag">プログラミング</a>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
-		</div>
+		</section>
+		<section id="bottom">
+			<div class="content">
+				<div class="left-content">
+					<p class="box-title">PROFILE</p>
+					<img src="../img/reizou05.jpg">
+					<p class="prof-content">
+						<a href="http://twitter.com/reizou05">@reizou05</a><br>
+						日本の高校生で趣味は筋トレ<br>
+						<a href="http://tento.tech">tento.tech</a>という学生プログラマー集団の長をやっています。<br>
+						WEB系のお仕事をください。
+					</p>
+				</div>
+				<div class="right-content">
+					<p class="box-title">CATEGORY</p>
+					<div class="categories">
+						<a href="#">プログラミング</a>
+						<a href="#">CSS</a>
+						<a href="#">日常</a>
+						<a href="#">筋トレ</a>
+					</div>
+				</div>
+				<div class="left-content">
+					<p class="box-title">AD</p>
+				</div>
+			</div>
+		</section>
 		<footer>
-			<ul>
-				<li><a href="/">トップ</a></li>
-				<li><a href="#">利用規約</a></li>
-				<li><a href="#">プライバシーポリシー</a></li>
-			</ul>
-			<p class="min title">Copyright © reizou05 All Rights Reserved.</p>
+			<p>© 2017 reizou05 All Rights Reserved.</p>
+			<div class="sns-list">
+				<a href="https://www.facebook.com/reiji.tenaka" target="_blank">
+					<i class="fa fa-facebook fa-fw"></i>
+				</a>
+				<a href="https://www.instagram.com/reizou05/" target="_blank">
+					<i class="fa fa-instagram fa-fw"></i>
+				</a>
+				<a href="https://twitter.com/reizou05" target="_blank">
+					<i class="fa fa-twitter fa-fw"></i>
+				</a>
+				<a href="https://github.com/reizou05" target="_blank">
+					<i class="fa fa-github fa-fw" aria-hidden="true"></i>
+				</a>
+			</div>
 		</footer>
 	</body>
 </html>

@@ -1,0 +1,13 @@
+#articles{
+	position: relative;
+	width: 100%;
+	min-height: 50vh;
+	padding-bottom: 2rem;
+}
+
+.pins{
+	position: relative;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
