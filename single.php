@@ -48,7 +48,7 @@
 					<?php the_post_thumbnail(); ?>
 					<?php the_content(); ?>
 					<div class="share-btns">
-						<a href="https://twitter.com/share" data-url="<?php the_permalink(); ?>" data-text="<?php the_title(); ?> @reizou05 さんから" data-lang="ja" class="twitter" onclick="window.open(this.href, 'tweetwindow', 'width=650, height=470, personalbar=0, toolbar=0, scrollbars=1, sizable=1'); return false;">
+						<a href="http://twitter.com/share?url=<?php the_permalink(); ?>&text=<?php the_title(); ?>&via=reizou05" data-lang="ja" class="twitter" onclick="window.open(this.href, 'tweetwindow', 'width=650, height=470, personalbar=0, toolbar=0, scrollbars=1, sizable=1'); return false;">
 							<img src="<?php echo get_template_directory_uri(); ?>/img/sns-icon/twitter.png">
 						</a>
 						<a href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>" class="facebook" onclick="window.open(this.href, 'tweetwindow', 'width=650, height=470, personalbar=0, toolbar=0, scrollbars=1, sizable=1'); return false;">
