@@ -25,6 +25,7 @@
 		</div>
 		<div class="left-content">
 			<p class="box-title">AD</p>
+			<?php get_template_part('adlink'); ?>
 		</div>
 	</div>
 </section>
