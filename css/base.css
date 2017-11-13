@@ -87,6 +87,6 @@ select {
 @media screen and (max-width: 1024px) {
 	html,
 	body {
-		font-size: 14px;
+		font-size: 15px;
 	}
 }
