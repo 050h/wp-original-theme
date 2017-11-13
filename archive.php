@@ -21,6 +21,7 @@
 		<?php get_header(); ?>
 		<section id="articles">
 			<div class="content">
+				<h2 class="section-title"><?php single_cat_title(); ?></h2>
 				<div class="pins">
 				<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 					<div class="pin">
