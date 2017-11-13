@@ -3,7 +3,7 @@
 		<h1>水曜日の筋パネラ</h1>
 	</div>
 	<div class="sns-list">
-		<a href="https://www.facebook.com/reiji.tenaka" target="_blank">
+		<a href="https://www.facebook.com/reizou05" target="_blank">
 			<i class="fa fa-facebook fa-fw"></i>
 		</a>
 		<a href="https://www.instagram.com/reizou05/" target="_blank">

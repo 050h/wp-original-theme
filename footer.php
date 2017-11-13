@@ -1,7 +1,7 @@
 <footer>
 	<p>© 2017 reizou05 All Rights Reserved.</p>
 	<div class="sns-list">
-		<a href="https://www.facebook.com/reiji.tenaka" target="_blank">
+		<a href="https://www.facebook.com/reizou05" target="_blank">
 			<i class="fa fa-facebook fa-fw"></i>
 		</a>
 		<a href="https://www.instagram.com/reizou05/" target="_blank">
