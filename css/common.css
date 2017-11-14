@@ -263,4 +263,7 @@ p.date{
 		     -o-transform: scale(1);
 		        transform: scale(1);
 	}
+	.circle-thumb > a > img{
+		padding: 2rem;
+	}
 }

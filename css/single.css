@@ -105,6 +105,10 @@
 	border-bottom: 1px solid #ccc;
 }
 
+.side-content>.cats>a:not(:last-child):after{
+	content: ',';
+}
+
 #relateds{
 	position: relative;
 	width: 100%;

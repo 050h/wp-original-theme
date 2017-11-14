@@ -15,6 +15,8 @@
 
 		<?php require('ogp.php'); ?>
 
+		<?php get_template_part('ga'); ?>
+
 		<title><?php bloginfo('name'); ?></title>
 	</head>
 	<body>

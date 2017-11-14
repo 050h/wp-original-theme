@@ -15,6 +15,8 @@
 
 		<?php require('ogp.php'); ?>
 
+		<?php get_template_part('ga'); ?>
+
 		<title><?php bloginfo('name'); ?></title>
 	</head>
 	<body>
@@ -37,7 +39,7 @@
 								$categories = get_the_category();
 								if($categories){
 									foreach($categories as $category){
-										echo '<a href="'.get_category_link($category->term_id).'">'.$category->cat_name.'</a>,';
+										echo '<a href="'.get_category_link($category->term_id).'">'.$category->cat_name.'</a>';
 									}
 								}
 							?>
