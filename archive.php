@@ -22,6 +22,7 @@
 	<body>
 		<?php get_header(); ?>
 		<section id="articles">
+			<?php breadcrumb(); ?>
 			<div class="content">
 				<h2 class="section-title"><?php single_cat_title(); ?></h2>
 				<div class="pins">

@@ -22,6 +22,7 @@
 	<body>
 		<?php get_header(); ?>
 		<section id="article">
+			<?php breadcrumb(); ?>
 			<div class="content">
 				<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 				<div class="side-contents">

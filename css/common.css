@@ -240,6 +240,31 @@ p.date{
 	font-weight: normal;
 }
 
+#breadcrumb{
+	position: relative;
+	margin-bottom: 1rem;
+}
+
+#breadcrumb>div>a{
+	padding-right: 1rem;
+	color: #333;
+	font-weight: normal;
+}
+
+#breadcrumb>div:not(:last-child)>a:after{
+	content: "";
+	position: absolute;
+	display: block;
+	width: 0;
+	height: 0;
+	right: 0;
+	top: 2px;
+	border-top: 5px solid transparent;
+	border-right: 5px solid transparent;
+	border-bottom: 5px solid transparent;
+	border-left: 7px solid #ff4390;
+}
+
 @media screen and (max-width: 980px) {
 	.content{
 		width: 100%;
